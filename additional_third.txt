@@ -1,0 +1,97 @@
+import java.util.Map;
+import java.util.*;
+import java.util.TreeMap;
+
+class Source {
+
+    private static TreeMap<String,String> data; //use data to  perform all the TreeMap functions...
+
+    public Source() {
+        //Intialze the TreeMap here....
+        data=new TreeMap<String,String>();
+    }
+
+    public String getNumber( String name ) {
+        //Return the number correspoinding to the name else return null...
+        String s1=name;;
+       // s1=null;
+        //try{
+        if(data.containsKey(s1)){
+            if(data.get(s1)!=null){
+                return data.get(s1);
+            }
+            
+          }
+          // new IllegalArgumentException("null");
+       // }
+       // catch(NullPointerException e){
+       // }
+        return null;
+    }
+    public boolean getName(String number){
+         //Return true if number correspoinding to a name in the TreeMap else return false.
+        boolean b=false;
+        Set<String> sd=data.keySet();
+        for(String se:sd){
+            if(data.get(se).equals(number)){
+                b=true;
+           }
+        }
+        return b;
+    }
+
+
+    public String putNumber( String name, String number ) {
+      // Add the (name,number) pair into TreeMap and return the string "True"
+      // ELSE throw an exception with the message "Name or Number: NULL Exception"
+      String s2="";
+      
+         // return s2;
+      
+      
+      try{
+          if(name!=null && number!=null){
+          s2="True";
+          data.put(name,number);}
+          
+          if(name==null || number==null)
+          throw new IllegalArgumentException("Name or Number: NULL Exception");
+      }
+      catch(IllegalArgumentException e){
+          s2="Name or Number: NULL Exception";
+          return s2;
+          
+      }
+      catch(NullPointerException n){}
+      return s2;
+    }
+
+    public TreeMap<String,String> print() {
+            //Return the TreeMap.
+            return data;
+    }
+    public static void main(String[] args) {
+        
+        // Implement the method calls listed in the problem description to arrive at the Sample Output
+        Source directory=new Source();
+        String s6,s7,s8;
+        
+        String s3=directory.putNumber("A1","1111");
+        String s4=directory.putNumber("A2","2222");
+        String s5=directory.putNumber("A3","3333");
+        TreeMap<String,String> t=directory.print();
+        s6=directory.getNumber("A1");
+        s7=directory.getNumber("A2");
+        s8=directory.getNumber("A3");
+        
+        System.out.println(s3);
+        System.out.println(s4);
+        System.out.println(s5);
+        System.out.println(t);
+        System.out.println(s6);
+        System.out.println(s7);
+        System.out.println(s8);  
+    }
+}
+
+

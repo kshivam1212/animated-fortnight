@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class Source{
+    public void addItem(ArrayList<String> groceryList, String item){
+        groceryList.add(item);
+    }
+    
+    public String modifyItem(ArrayList<String> groceryList, int index, String newItem){
+        groceryList.set(index,newItem);
+        return "Item of index " + index + " has been modified.";
+    }
+    
+    public String removeItem(ArrayList<String> groceryList, int index){
+        groceryList.remove(index);
+         return "Item of index " + index + " has been removed.";
+    }
+    
+    public String searchItem(ArrayList<String> groceryList, String searchItem){
+       // String s="no such item";
+        if(groceryList.contains(searchItem))
+        {
+            return searchItem;
+        }
+        else {
+        return "no such item";}
+    }
+    
+    public int getSize(ArrayList<String> groceryList){
+        return groceryList.size();
+    }
+    
+    /* public static void main(String []args){
+        Source source=new Source();
+       ArrayList<String> groceryList = new ArrayList<String>();
+       
+       source.addItem(groceryList, "Fruit");
+       source.addItem(groceryList, "Vegetable");
+       source.addItem(groceryList, "Beverages");
+       
+        String s1=source.modifyItem(groceryList, 1, "Fruitss");
+        String s2=source.removeItem(groceryList, 1);
+        String s3=source.searchItem(groceryList, "Beverages");
+        int len=source.getSize(groceryList);
+        
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        System.out.println(len);
+       
+       
+    } */
+}
+    

@@ -1,0 +1,28 @@
+
+import java.util.*;
+
+public class Source {
+  public static Set<Integer> union(Set<Integer> setA, Set<Integer> setB) {
+    Set<Integer> tmp = new HashSet();
+    tmp.addAll(setA);
+    tmp.addAll(setB);
+    return tmp;
+  }
+
+  public static Set<Integer> intersect(Set<Integer> setA, Set<Integer> setB) {
+    Set<Integer> tmp = new HashSet();
+    for (Integer x : setA)
+      if (setB.contains(x))
+        tmp.add(x);
+    return tmp;
+  }
+
+  public static Set<Integer> subtract(Set<Integer> setA, Set<Integer> setB) {
+    Set<Integer> tmp = new HashSet();
+    tmp.addAll(setA);
+    tmp.removeAll(setB);
+    return tmp;
+  }
+}
+  
+   

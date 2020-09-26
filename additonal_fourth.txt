@@ -1,0 +1,55 @@
+//additional_fourth
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+// Class name should be "Source",
+// otherwise solution won't be accepted
+public class Source {
+    
+    public ArrayList<String> copy(ArrayList<String> a){
+        ArrayList<String> a4=new ArrayList<String>();
+        a4.addAll(a);
+        return a4;
+        
+    }
+    
+    public String PrintIndex(ArrayList<String> list){
+        return list.get(0);
+    }
+    
+    public ArrayList<String> addAfter(ArrayList<String> a, String m, String n){
+        int k;
+        k=a.indexOf(m);
+        ArrayList<String> a5=new ArrayList<String>();
+        a5.addAll(a);
+        a5.add(k+1,n);
+        return a5;
+    }
+    
+   /* public static void main(String []args){
+        
+        Source s=new Source();
+       
+        ArrayList<String> a1=new ArrayList<String>();
+        ArrayList<String> a2=new ArrayList<String>();
+        ArrayList<String> a3=new ArrayList<String>();
+        a1.add("Breaking Bad");
+        a1.add("Young Sheldon");
+        a1.add("Friends");
+        a1.add("Stranger Things");
+        
+        a2=s.copy(a1);
+        String s1=s.PrintIndex(a2);
+        a3=s.addAfter(a1,"Friends","Sherlock");
+        
+        System.out.println(a2);
+        System.out.println(s1);
+        System.out.println(a3);
+        
+    } */
+
+}
